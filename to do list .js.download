@@ -1,0 +1,20 @@
+    function addTask() {
+      let taskInput = document.getElementById("taskInput");
+      let taskText = taskInput.value;
+
+      if (taskText === "") {
+        alert("Please write something!");
+      } else {
+        let li = document.createElement("li");
+        li.textContent = taskText;
+
+        // click to delete
+        li.onclick = function() {
+          this.remove();
+        };
+
+        document.getElementById("taskList").appendChild(li);
+        taskInput.value = "";
+      }
+    }
+
